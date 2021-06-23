@@ -1,0 +1,294 @@
+/*
+  Theme Name: Name - Multipurpose HTML Template
+  Author: mdsalim400@gmail.com
+  Support: admin@gmail.com
+  Description: Creative  HTML5 template.
+  Version: 1.0
+*/
+
+/* CSS Index
+-----------------------------------
+1. Theme default css
+2. header
+3. slider
+4. about-area
+5. features-box
+6. department
+7. team
+8. video-area
+9. counter
+10. footer
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap");
+
+/* ==================== */
+/* VARIABLES */
+/* ==================== */
+:root {
+  --color-primary: #222222;
+  --color-secondary: #f9bf3b;
+  --color-light: #ffffff;
+  --color-dark: #666;
+
+  --heading-primary: 6rem;
+  --heading-secondary: 3rem;
+  --heading-tertiary: 2.2rem;
+
+  --body-text: 1.4rem;
+}
+
+/* ==================== */
+/* BASIC SETUP */
+/* ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.2%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: var(--body-text);
+}
+
+/* ==================== */
+/* TYPOGRAPHY */
+/* ==================== */
+.heading-secondary {
+  font-size: var(--heading-secondary);
+}
+
+.heading-tertiary {
+  font-size: var(--heading-tertiary);
+}
+/* ==================== */
+/* COMPONENTS */
+/* ==================== */
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  padding: 1.5rem 1.5rem;
+}
+
+.btn-link {
+  padding: 0;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.section-header {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+/* ==================== */
+/* TOP NAV */
+/* ==================== */
+.top-nav {
+  font-size: var(--body-text);
+  min-height: 4.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding-top: 1.2rem;
+}
+
+.top-nav li {
+  padding-right: 2rem;
+  border-right: 2px solid var(--color-dark);
+}
+
+.top-nav i {
+  padding-left: 2rem;
+  padding-right: 3px;
+  color: var(--color-secondary);
+}
+
+.top-nav .icon-1 {
+  padding-left: 0;
+}
+
+.top-nav li:nth-child(3) {
+  border-right: none;
+}
+
+/* ==================== */
+/* NAVBAR */
+/* ==================== */
+nav {
+  min-height: 9rem;
+  background-color: tomato;
+  color: var(--color-primary);
+}
+
+nav .nav-link {
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+/* ==================== */
+/* SERVICES  */
+/* ==================== */
+.services {
+  padding: 5rem 0rem;
+}
+
+.services-left-img {
+  width: 5rem;
+  height: 5rem;
+  display: inline-block;
+  margin-right: 1.5rem;
+  margin-top: 3px;
+}
+
+/* ==================== */
+/* CTA */
+/* ==================== */
+.cta {
+  background-color: var(--color-primary);
+  min-height: 10rem;
+  margin-top: 2rem;
+}
+
+.cta .heading-secondary {
+  color: var(--color-light);
+  padding-left: 4rem;
+}
+
+/* ==================== */
+/* ABOUT  */
+/* ==================== */
+.about {
+  padding: 5rem 0rem;
+}
+
+.about-card-icon {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-right: 1.3rem;
+  margin-top: 0;
+}
+
+.about-mid {
+  margin-left: 5rem;
+}
+
+/* ==================== */
+/* VIDEO  */
+/* ==================== */
+.video {
+  padding: 5rem 0rem;
+}
+.video i {
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
+
+/* ==================== */
+/* WORK  */
+/* ==================== */
+.work {
+  padding: 5rem 0rem;
+}
+
+.work a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.work a:hover .work h4 {
+  border-bottom: 1px solid var(--color-primary);
+}
+
+/* ==================== */
+/* TESTIMONIAL  */
+/* ==================== */
+.testimonial {
+  padding: 5rem 0rem;
+  border-top: 1px solid rgba(153, 153, 153, 0.219);
+}
+
+.testimonial span {
+  font-size: 5rem;
+}
+
+/* ==================== */
+/* BLOG  */
+/* ==================== */
+.blog {
+  padding: 5rem 0rem;
+}
+
+.blog .section-header {
+  width: 35%;
+}
+
+.blog a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+/* ==================== */
+/* FOOTER */
+/* ==================== */
+.footer-top {
+  background-color: var(--color-primary);
+  padding: 5rem 0rem;
+  margin-top: 4rem;
+}
+
+.footer-btn {
+  background-color: var(--color-light);
+}
+
+.footer-top p {
+  color: var(--color-light);
+  padding-top: 2rem;
+  line-height: 2.5rem;
+}
+
+.footer-top .heading-tertiary {
+  color: var(--color-light);
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.footer-link {
+  color: var(--color-light);
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: var(--color-secondary);
+}
+
+.footer-top .contact-us {
+  color: var(--color-light);
+  margin-left: 1.2rem;
+}
+
+.footer-top .contact-us li {
+  margin-bottom: 1rem;
+}
+
+.footer-top .contact-us span {
+  display: inline-block;
+  margin-left: 5rem;
+  margin-top: 6px;
+}
+
+.footer-bottom {
+  background-color: #000;
+  color: var(--color-light);
+  min-height: 6rem;
+  padding-top: 2rem;
+}
