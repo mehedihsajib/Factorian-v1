@@ -1,23 +1,25 @@
 /*
-  Theme Name: Name - Multipurpose HTML Template
-  Author: mdsalim400@gmail.com
-  Support: admin@gmail.com
-  Description: Creative  HTML5 template.
+  Theme Name: Name - Factorian
+  Author: test@gmail.com
+  Support: support@factorian.com
+  Description: Creative  HTML5 and Bootstrap template.
   Version: 1.0
 */
 
 /* CSS Index
 -----------------------------------
-1. Theme default css
-2. header
-3. slider
-4. about-area
-5. features-box
-6. department
-7. team
-8. video-area
-9. counter
-10. footer
+1. Variables
+2. Basic setup
+3. Components
+4. Top Nav
+5. Navbar
+6. Hero
+7. Services
+8. About
+9. Works
+10. Video
+11. Blog
+12. Footer
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap");
@@ -30,6 +32,7 @@
   --color-secondary: #f9bf3b;
   --color-light: #ffffff;
   --color-dark: #666;
+  --color-light-dark: #f4f4f4;
 
   --heading-primary: 6rem;
   --heading-secondary: 3rem;
@@ -62,20 +65,39 @@ body {
 /* ==================== */
 /* TYPOGRAPHY */
 /* ==================== */
+.heading-primary {
+  font-size: 6rem;
+  font-weight: 600;
+  color: var(--color-light);
+}
 .heading-secondary {
   font-size: var(--heading-secondary);
 }
 
 .heading-tertiary {
   font-size: var(--heading-tertiary);
+  font-weight: 600;
 }
+
+.body-gray-text {
+  color: #444;
+  font-size: 1.5rem;
+}
+
 /* ==================== */
 /* COMPONENTS */
 /* ==================== */
 .btn-primary {
   background-color: var(--color-secondary);
   color: var(--color-primary);
-  padding: 1.5rem 1.5rem;
+  padding: 2rem 2rem;
+  text-transform: uppercase;
+  border: 3px solid transparent;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  border: 3px solid var(--color-secondary);
 }
 
 .btn-link {
@@ -85,11 +107,78 @@ body {
   color: var(--color-primary);
 }
 
+.btn-link:hover {
+  color: var(--color-secondary);
+}
+
 .section-header {
   width: 50%;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 5rem;
+}
+
+/* Search bar */
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  margin-right: -2rem;
+}
+
+.search-box i {
+  font-size: 1.8rem;
+}
+
+.input-search {
+  height: 5rem;
+  width: 5rem;
+  border-style: none;
+  padding: 1rem;
+  font-size: var(--body-text);
+  outline: none;
+  border-radius: 2.5rem;
+  transition: all 0.5s ease-in-out;
+  padding-right: 4rem;
+  color: var(--color-primary);
+}
+
+.input-search::placeholder {
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+
+.btn-search {
+  width: 5rem;
+  height: 5rem;
+  border-style: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  background-color: transparent;
+  color: var(--color-primary);
+  pointer-events: painted;
+}
+
+.btn-search:focus ~ .input-search {
+  width: 20rem;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+.input-search:focus {
+  width: 20rem;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
 /* ==================== */
 /* TOP NAV */
@@ -99,7 +188,7 @@ body {
   min-height: 4.5rem;
   background-color: var(--color-primary);
   color: var(--color-light);
-  padding-top: 1.2rem;
+  padding-top: 1rem;
 }
 
 .top-nav li {
@@ -111,6 +200,10 @@ body {
   padding-left: 2rem;
   padding-right: 3px;
   color: var(--color-secondary);
+}
+
+.top-nav p {
+  font-size: 1.5rem;
 }
 
 .top-nav .icon-1 {
@@ -126,25 +219,127 @@ body {
 /* ==================== */
 nav {
   min-height: 9rem;
-  background-color: tomato;
+  background-color: var(--color-light);
   color: var(--color-primary);
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+nav .nav-item {
+  padding: 3rem 2rem;
+  height: 100%;
+  margin: 0;
 }
 
 nav .nav-link {
   color: var(--color-primary);
   text-transform: uppercase;
+  font-size: var(--body-text);
+  font-weight: 600;
+}
+
+nav .nav-link:hover {
+  color: var(--color-primary);
+}
+
+nav .nav-item:hover {
+  background-color: var(--color-light-dark);
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: all 0.3s ease-in;
+}
+
+nav .nav-toggle-icon {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+/* ==================== */
+/* HERO */
+/* ==================== */
+.hero {
+  height: 100vh;
+}
+
+.hero .carousel-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slider-item-1 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 100)),
+    url("../img/text-img.jpg");
+  /* background-image: url("../img/text-img.jpg"); */
+  min-height: 100vh;
+}
+
+.slider-item-2 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 100)),
+    url("../img/text-img.jpg");
+  min-height: 100vh;
+}
+
+.slider-item-3 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 100)),
+    url("../img/text-img.jpg");
+  min-height: 100vh;
+}
+
+.hero-slider-content {
+  transform: translateY(25%);
+}
+
+.hero-slider-content p {
+  color: var(--color-light);
+  font-size: 2.4rem;
+}
+
+/* .carousel-control-prev-icon {
+  color: white;
+  border: 1px solid white;
+} */
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 10%;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  /* width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  border: 2px solid var(--color-light); */
+  display: none;
+}
+
+.hero i {
+  color: var(--color-light);
+  font-size: 1.5rem;
+  border: 2px solid var(--color-light);
+  padding: 1rem 1.3rem;
 }
 
 /* ==================== */
 /* SERVICES  */
 /* ==================== */
 .services {
-  padding: 5rem 0rem;
+  background-color: var(--color-light);
+  padding: 10rem 0rem;
+}
+
+.services-img {
+  width: 37rem;
+  height: 17.5rem;
 }
 
 .services-left-img {
-  width: 5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7rem;
   display: inline-block;
   margin-right: 1.5rem;
   margin-top: 3px;
@@ -155,20 +350,26 @@ nav .nav-link {
 /* ==================== */
 .cta {
   background-color: var(--color-primary);
-  min-height: 10rem;
+  min-height: 13.5rem;
   margin-top: 2rem;
 }
 
 .cta .heading-secondary {
   color: var(--color-light);
-  padding-left: 4rem;
+  padding-top: 1rem;
 }
 
 /* ==================== */
 /* ABOUT  */
 /* ==================== */
 .about {
-  padding: 5rem 0rem;
+  background-color: var(--color-light);
+  padding: 10rem 0rem;
+}
+
+.about-img-left {
+  width: 37rem;
+  height: 27.5rem;
 }
 
 .about-card-icon {
@@ -186,18 +387,59 @@ nav .nav-link {
 /* VIDEO  */
 /* ==================== */
 .video {
-  padding: 5rem 0rem;
+  background-color: var(--color-light-dark);
+  padding: 10rem 0rem;
 }
+
 .video i {
   font-size: 2rem;
   color: var(--color-secondary);
+}
+
+.video p {
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.video span {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+}
+
+/* Modal Video */
+.modal-video-img {
+  width: 50rem;
+  height: 30rem;
+}
+
+.modal-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(20%, -50%);
+}
+
+.video-modal {
+  position: relative;
+}
+
+.video-modal i {
+  font-size: 8rem;
+  color: var(--color-light);
 }
 
 /* ==================== */
 /* WORK  */
 /* ==================== */
 .work {
-  padding: 5rem 0rem;
+  background-color: var(--color-light);
+  padding: 10rem 0rem;
+}
+
+.work-img {
+  width: 37rem;
+  height: 19rem;
 }
 
 .work a {
@@ -213,19 +455,32 @@ nav .nav-link {
 /* TESTIMONIAL  */
 /* ==================== */
 .testimonial {
-  padding: 5rem 0rem;
+  background-color: var(--color-light);
+  padding: 10rem 0rem;
   border-top: 1px solid rgba(153, 153, 153, 0.219);
 }
 
-.testimonial span {
-  font-size: 5rem;
+.testimonial p {
+  font-size: 1.6rem;
+  color: #777;
+  font-style: italic;
+}
+
+.testimonial .role {
+  font-size: 1.4rem;
 }
 
 /* ==================== */
 /* BLOG  */
 /* ==================== */
 .blog {
-  padding: 5rem 0rem;
+  background-color: var(--color-light);
+  padding: 10rem 0rem;
+}
+
+.blog-img {
+  width: 37rem;
+  height: 19rem;
 }
 
 .blog .section-header {
@@ -242,7 +497,7 @@ nav .nav-link {
 /* ==================== */
 .footer-top {
   background-color: var(--color-primary);
-  padding: 5rem 0rem;
+  padding: 10rem 0rem;
   margin-top: 4rem;
 }
 
@@ -289,6 +544,6 @@ nav .nav-link {
 .footer-bottom {
   background-color: #000;
   color: var(--color-light);
-  min-height: 6rem;
-  padding-top: 2rem;
+  min-height: 7rem;
+  padding-top: 2.5rem;
 }
